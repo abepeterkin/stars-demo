@@ -4,7 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
   var colorDropdown = document.querySelector('select[name="color"]')
   var zoomSlider = document.querySelector('#zoomSlider')
   
-  colorDropdown.onchange = function() {
+  colorDropdown.onchange = colorChanged
+
+  zoomSlider.onchange = sliderChanged
+  zoomSlider.oninput = sliderChanged
+
+  function colorChanged() {
     switch (colorDropdown.value) {
       case 'white':
         starColor = STARS_WHITE
@@ -27,16 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
   function sliderChanged() {
     var minp = zoomSlider.min;
     var maxp = zoomSlider.max;
-
     var minv = Math.log(MIN_ZOOM);
     var maxv = Math.log(MAX_ZOOM);
-
     var scale = (maxv-minv) / (maxp-minp);
-
     zoom = Math.exp(minv + scale*(zoomSlider.value-minp));
-
   }
-
-  zoomSlider.onchange = sliderChanged
-  zoomSlider.oninput = sliderChanged
 })
