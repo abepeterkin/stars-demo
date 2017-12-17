@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Canvas FTL Demo</title>
+  <meta name="description" content="Canvas FTL Demo">
+  <meta name="author" content="Abe Peterkin">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <canvas id='canvas'></canvas>
+  <form id='optionsForm'>
+    <span>
+      <label for="color">Color:</label>
+      <select id="color" name="color">
+        <option value='multi'>Multi</option>
+        <option value='red'>Red</option>
+        <option value='blue'>Blue</option>
+        <option value='purple'>Purple</option>
+        <option value='white'>White</option>
+      </select>
+    </span>
+    <span>
+      <label for="zoomSlider">Zoom speed:</label>
+      <input type='range' id='zoomSlider' min='0' max='1' step='0.01' value='0.2'>
+  </span>
+  </form>
+  <script src="stars.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
