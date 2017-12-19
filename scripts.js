@@ -142,11 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   window.requestAnimationFrame(step)
 
-  setInterval(function() {
-    update()
-    draw()
-  }, 25)
-
   function createStars() {
     for (var i = 0; i < starNum; i++) {
       if (!stars[i])
